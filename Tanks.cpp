@@ -1,11 +1,6 @@
 #include <iostream>
 class Tank {
-private:
-	int initial_health_;
-	int current_health_;
-	double attack_;
-	double defense_;
-	std::string name;
+
 public:
 	Tank()
 	{
@@ -20,12 +15,21 @@ public:
 		} while (!Validate());
 		current_health_ = initial_health_;
 	}
-	bool Validate()const;
-	bool IsAlive()const;
+
 	bool Hit(Tank& defender)const;
 	void print_health_information()const;
 	void ReportDeath()const;
 	~Tank() {}
+private:
+	int initial_health_;
+	int current_health_;
+	double attack_;
+	double defense_;
+	std::string name;
+
+	bool Validate()const;
+	bool IsAlive()const;
+
 };
 void tanks_combat(Tank& tank1, Tank& tank2);
 
